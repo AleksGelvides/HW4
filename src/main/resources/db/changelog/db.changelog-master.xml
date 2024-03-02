@@ -1,0 +1,64 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="alekseygelvides (generated)" id="1709137999742-1">
+        <createTable tableName="categories">
+            <column name="create_at" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="categories_pkey"/>
+            </column>
+            <column name="update_at" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="category_name" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="alekseygelvides (generated)" id="1709137999742-2">
+        <createTable tableName="comments">
+            <column name="author_id" type="BIGINT"/>
+            <column name="create_at" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="comments_pkey"/>
+            </column>
+            <column name="news_id" type="BIGINT"/>
+            <column name="update_at" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="text" type="VARCHAR"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="alekseygelvides (generated)" id="1709137999742-3">
+        <createTable tableName="news">
+            <column name="author_id" type="BIGINT"/>
+            <column name="category_id" type="BIGINT"/>
+            <column name="create_at" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="news_pkey"/>
+            </column>
+            <column name="update_at" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="header" type="VARCHAR"/>
+            <column name="text" type="VARCHAR"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="alekseygelvides (generated)" id="1709137999742-4">
+        <createTable tableName="users">
+            <column name="create_at" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="users_pkey"/>
+            </column>
+            <column name="update_at" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="first_name" type="VARCHAR(255)"/>
+            <column name="last_name" type="VARCHAR(255)"/>
+            <column name="login" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="alekseygelvides (generated)" id="1709137999742-5">
+        <addForeignKeyConstraint baseColumnNames="author_id" baseTableName="news" constraintName="fk3qvva8ftw201mxkeuirniflgb" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="users" validate="true"/>
+    </changeSet>
+    <changeSet author="alekseygelvides (generated)" id="1709137999742-6">
+        <addForeignKeyConstraint baseColumnNames="category_id" baseTableName="news" constraintName="fk6itmfjj4ma8lfpj10jx24mhvx" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="categories" validate="true"/>
+    </changeSet>
+    <changeSet author="alekseygelvides (generated)" id="1709137999742-7">
+        <addForeignKeyConstraint baseColumnNames="author_id" baseTableName="comments" constraintName="fkn2na60ukhs76ibtpt9burkm27" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="users" validate="true"/>
+    </changeSet>
+    <changeSet author="alekseygelvides (generated)" id="1709137999742-8">
+        <addForeignKeyConstraint baseColumnNames="news_id" baseTableName="comments" constraintName="fkqx89vg0vuof2ninmn5x5eqau2" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="news" validate="true"/>
+    </changeSet>
+
+    <include file="db/changelog/db.init-changelog.xml"/>
+</databaseChangeLog>

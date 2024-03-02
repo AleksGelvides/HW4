@@ -1,0 +1,10 @@
+insert into USERS (first_name, last_name, login, create_at, update_at) values ('Milena', 'Guess', 'mguess0@tmall.com', '4/11/2023', '6/19/2023');
+insert into USERS (first_name, last_name, login, create_at, update_at) values ('Thane', 'Crut', 'tcrut1@admin.ch', '5/13/2023', '2/21/2024');
+insert into USERS (first_name, last_name, login, create_at, update_at) values ('Kurtis', 'Dorsett', 'kdorsett2@dyndns.org', '4/13/2023', '6/1/2023');
+insert into USERS (first_name, last_name, login, create_at, update_at) values ('Ajay', 'Reightley', 'areightley3@ftc.gov', '4/23/2023', '3/30/2023');
+insert into USERS (first_name, last_name, login, create_at, update_at) values ('Eadie', 'Yeardsley', 'eyeardsley4@intel.com', '6/9/2023', '10/23/2023');
+insert into USERS (first_name, last_name, login, create_at, update_at) values ('Giovanni', 'Borris', 'gborris5@list-manage.com', '4/8/2023', '7/27/2023');
+insert into USERS (first_name, last_name, login, create_at, update_at) values ('Deny', 'Pechard', 'dpechard6@google.ru', '3/26/2023', '1/31/2024');
+insert into USERS (first_name, last_name, login, create_at, update_at) values ('Leonhard', 'Houlston', 'lhoulston7@mayoclinic.com', '7/13/2023', '7/13/2023');
+insert into USERS (first_name, last_name, login, create_at, update_at) values ('Cherise', 'Vedeshkin', 'cvedeshkin8@freewebs.com', '3/31/2023', '7/27/2023');
+insert into USERS (first_name, last_name, login, create_at, update_at) values ('Michaela', 'Kliemchen', 'mkliemchen9@gizmodo.com', '3/31/2023', '1/10/2024');
